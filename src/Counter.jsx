@@ -8,9 +8,9 @@ export default function Counter() {
     return (
         <>
             <div className="card">
-                <button onClick={() => dispatch(increment())}>+</button>
+                <h1>the count is {count}</h1>
                 <button onClick={() => dispatch(decrement())}>-</button>
-                <div>count is {count}</div>
+                <button onClick={() => dispatch(increment())}>+</button>
             </div>
         </>
     )
