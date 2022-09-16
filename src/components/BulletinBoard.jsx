@@ -1,4 +1,4 @@
-import PostsList from './PostsList'
+import PostsList from '@/features/posts/PostsList'
 
 export default function BulletinBoard() {
     return (
