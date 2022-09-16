@@ -10,7 +10,7 @@ import {
 export default function Counter() {
     const [amount, setAmount] = useState(1)
 
-    const { count } = useSelector(store => store.counterReducer)
+    const { count } = useSelector(store => store.counter)
     const dispatch = useDispatch()
 
     return (
