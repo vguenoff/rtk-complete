@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { addPost } from '@/features/posts/postsSlice'
+import { addPost } from './postsSlice'
 
 export default function AddPostForm() {
     const users = useSelector(({ users }) => users)
@@ -11,7 +11,7 @@ export default function AddPostForm() {
     const [content, setContent] = useState('')
     const [userId, setUserId] = useState('')
 
-    const canSave = Boolean(title) && Boolean(content) && Boolean(userId)
+    const canSave = Boolean(title) ?? Boolean(content) ?? Boolean(userId)
 
     return (
         <section>
@@ -40,7 +40,7 @@ export default function AddPostForm() {
                 <select
                     id="postAuthor"
                     value={userId}
-                    onChange={e => setUserId(e.target.value)}
+                    onChange={e => setUserId(Number(e.target.value))}
                 >
                     <option value=""></option>
                     {users.map(user => (
