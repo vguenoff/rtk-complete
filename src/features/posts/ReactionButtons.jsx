@@ -31,16 +31,16 @@ export default function ReactionButtons({ post }) {
     const dispatch = useDispatch()
 
     const reactionButtons = Object.entries(reactionEmoji).map(
-        ([name, emoji]) => (
+        ([reactionName, emoji]) => (
             <button
-                key={name}
+                key={reactionName}
                 type="button"
                 className="reactionButton"
                 onClick={() =>
-                    dispatch(addReaction({ postId: post.id, reaction: name }))
+                    dispatch(addReaction({ postId: post.id, reactionName }))
                 }
             >
-                {emoji} {post.reactions[name]}
+                {emoji} {post.reactions[reactionName]}
             </button>
         ),
     )

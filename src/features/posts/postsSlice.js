@@ -58,10 +58,10 @@ export const postsSlice = createSlice({
             },
         },
         addReaction(state, action) {
-            const { postId, reaction } = action.payload
+            const { postId, reactionName } = action.payload
             const existingPost = state.find(post => post.id === postId)
 
-            if (existingPost) existingPost.reactions[reaction] += 1
+            if (existingPost) existingPost.reactions[reactionName] += 1
         },
     },
 })
